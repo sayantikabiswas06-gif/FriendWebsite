@@ -1,0 +1,787 @@
+/* =========================================
+   BASIC SETTINGS
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow: hidden;
+
+    background: #fce4ec;
+}
+
+.screen {
+    position: fixed;
+
+    width: 100%;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   INTRO BACKGROUND
+   ========================================= */
+
+#intro {
+    background: linear-gradient(
+        to bottom,
+        #ccecff,
+        #fff4e6
+    );
+}
+
+.sky {
+    position: absolute;
+
+    width: 100%;
+    height: 70%;
+
+    top: 0;
+}
+
+.cloud {
+    position: absolute;
+
+    width: 150px;
+    height: 50px;
+
+    background: white;
+
+    border-radius: 50px;
+
+    opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background: white;
+
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 70px;
+    height: 70px;
+
+    left: 30px;
+    bottom: 15px;
+}
+
+.cloud::after {
+    width: 60px;
+    height: 60px;
+
+    right: 25px;
+    bottom: 10px;
+}
+
+.cloud1 {
+    top: 15%;
+    left: 10%;
+
+    animation: cloudMove 12s linear infinite;
+}
+
+.cloud2 {
+    top: 30%;
+    right: 10%;
+
+    transform: scale(0.7);
+
+    animation: cloudMove 16s linear infinite reverse;
+}
+
+.ground {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 25%;
+
+    background: #b8d99a;
+
+    border-top: 5px solid #92bd73;
+}
+
+@keyframes cloudMove {
+
+    from {
+        transform: translateX(-20px);
+    }
+
+    to {
+        transform: translateX(40px);
+    }
+
+}
+
+
+/* =========================================
+   POSTBOX
+   ========================================= */
+
+.postbox {
+    position: absolute;
+
+    width: 180px;
+    height: 240px;
+
+    bottom: 18%;
+    right: 18%;
+
+    z-index: 5;
+}
+
+.postbox-top {
+    position: absolute;
+
+    width: 180px;
+    height: 70px;
+
+    top: 0;
+
+    background: #d9534f;
+
+    border-radius: 90px 90px 0 0;
+}
+
+.postbox-body {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    bottom: 0;
+
+    background: #d9534f;
+
+    border-radius: 10px;
+}
+
+.post-slot {
+    position: absolute;
+
+    width: 120px;
+    height: 15px;
+
+    top: 25px;
+    left: 30px;
+
+    background: #701c1c;
+
+    border-radius: 10px;
+}
+
+.postbox-mark {
+    position: absolute;
+
+    top: 65px;
+    left: 62px;
+
+    font-size: 55px;
+
+    color: white;
+}
+
+
+/* =========================================
+   MAN
+   ========================================= */
+
+.man {
+    position: absolute;
+
+    width: 170px;
+    height: 300px;
+
+    bottom: 18%;
+    left: -200px;
+
+    z-index: 10;
+
+    animation: walkToPostbox 5s ease-in-out forwards;
+}
+
+@keyframes walkToPostbox {
+
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: 55%;
+    }
+
+}
+
+
+/* HEAD */
+
+.head {
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    top: 0;
+    left: 40px;
+
+    background: #f2b28d;
+
+    border-radius: 50%;
+}
+
+.hair {
+    position: absolute;
+
+    width: 70px;
+    height: 35px;
+
+    top: -5px;
+    left: 5px;
+
+    background: #38251c;
+
+    border-radius: 50% 50% 20% 20%;
+}
+
+.eye {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 38px;
+
+    background: black;
+
+    border-radius: 50%;
+}
+
+.eye1 {
+    left: 20px;
+}
+
+.eye2 {
+    right: 20px;
+}
+
+.mouth {
+    position: absolute;
+
+    width: 18px;
+    height: 8px;
+
+    left: 31px;
+    top: 53px;
+
+    border-bottom: 2px solid black;
+}
+
+
+/* BODY */
+
+.body {
+    position: absolute;
+
+    width: 90px;
+    height: 140px;
+
+    top: 78px;
+    left: 35px;
+
+    background: #5579a8;
+
+    border-radius: 20px;
+}
+
+
+/* ARM */
+
+.arm {
+    position: absolute;
+
+    width: 85px;
+    height: 22px;
+
+    top: 95px;
+    left: 95px;
+
+    background: #f2b28d;
+
+    border-radius: 15px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* LETTER IN HAND */
+
+.hand-letter {
+    position: absolute;
+
+    top: 88px;
+    left: 150px;
+
+    font-size: 40px;
+
+    z-index: 20;
+
+    animation: handLetterShake 0.5s infinite alternate;
+}
+
+@keyframes handLetterShake {
+
+    from {
+        transform: rotate(-5deg);
+    }
+
+    to {
+        transform: rotate(5deg);
+    }
+
+}
+
+
+/* =========================================
+   INTRO TEXT
+   ========================================= */
+
+.intro-text {
+    position: absolute;
+
+    bottom: 5%;
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    color: #5b4a42;
+
+    animation: fadeText 2s infinite alternate;
+}
+
+@keyframes fadeText {
+
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   FLYING LETTER
+   ========================================= */
+
+#flyingScene {
+    background: #fff7f0;
+}
+
+.flying-letter {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) scale(0.2);
+
+    font-size: 120px;
+
+    animation: flyLetter 2.5s ease-in-out forwards;
+}
+
+@keyframes flyLetter {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            translate(350px, 200px)
+            rotate(20deg)
+            scale(0.2);
+
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            rotate(-5deg)
+            scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   LETTER PAGE
+   ========================================= */
+
+#letterPage {
+    background: #f6e7d8;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: auto;
+}
+
+.letter-paper {
+    width: min(650px, 90%);
+
+    min-height: 70%;
+
+    padding: 45px;
+
+    background: #fffdf7;
+
+    border: 1px solid #dfd1bf;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+
+    animation: paperAppear 1s ease forwards;
+}
+
+@keyframes paperAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.paper-decoration {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.letter-paper h1 {
+    color: #a44747;
+
+    margin-bottom: 30px;
+}
+
+.letter-content {
+    text-align: left;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #493d38;
+}
+
+.signature {
+    text-align: right;
+
+    margin-top: 30px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.main-button {
+    margin-top: 30px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #d9534f;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   OPINION PAGE
+   ========================================= */
+
+#opinionPage {
+    background: linear-gradient(
+        135deg,
+        #ffe5ec,
+        #e4efff
+    );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.opinion-card {
+    width: min(600px, 95%);
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+
+    animation: cardAppear 0.8s ease;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.question-mark {
+    font-size: 55px;
+}
+
+.opinion-card h1 {
+    color: #a44747;
+}
+
+.opinion-card p {
+    font-size: 18px;
+
+    color: #665b58;
+}
+
+textarea {
+    width: 100%;
+
+    height: 180px;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    resize: none;
+
+    border: 2px solid #ead3d8;
+
+    border-radius: 15px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #d9534f;
+}
+
+.character-count {
+    text-align: right;
+
+    margin-top: 5px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   THANK YOU
+   ========================================= */
+
+#thankYouPage {
+    background: linear-gradient(
+        135deg,
+        #ffe5ec,
+        #fff5d9
+    );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.thank-you {
+    animation: thankYouAppear 1s ease;
+}
+
+@keyframes thankYouAppear {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+.big-smile {
+    font-size: 110px;
+
+    animation: smileBounce 1s infinite alternate;
+}
+
+@keyframes smileBounce {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+
+}
+
+.thank-you h1 {
+    font-size: 50px;
+
+    color: #d9534f;
+}
+
+.thank-you p {
+    font-size: 20px;
+
+    color: #594b47;
+}
+
+.floating-hearts {
+    margin-top: 30px;
+
+    font-size: 30px;
+
+    animation: heartFloat 2s infinite alternate;
+}
+
+@keyframes heartFloat {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================
+   PHONE SCREEN
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .postbox {
+        right: 8%;
+
+        transform: scale(0.8);
+    }
+
+    .man {
+        transform: scale(0.8);
+        transform-origin: bottom left;
+    }
+
+    .letter-paper {
+        padding: 25px;
+
+        width: 92%;
+    }
+
+    .letter-content {
+        font-size: 16px;
+    }
+
+    .opinion-card {
+        padding: 25px;
+    }
+
+    .thank-you h1 {
+        font-size: 40px;
+    }
+
+}

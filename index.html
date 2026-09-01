@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Letter For You 💌</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =================================
+         INTRO SCENE
+         ================================= -->
+
+    <section id="intro" class="screen">
+
+        <div class="sky">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+        </div>
+
+        <div class="ground"></div>
+
+        <!-- Postbox -->
+        <div class="postbox">
+            <div class="postbox-top"></div>
+            <div class="postbox-body">
+                <div class="post-slot"></div>
+                <div class="postbox-mark">✉</div>
+            </div>
+        </div>
+
+        <!-- Man -->
+        <div id="man" class="man">
+
+            <div class="head">
+                <div class="hair"></div>
+
+                <div class="eye eye1"></div>
+                <div class="eye eye2"></div>
+
+                <div class="mouth"></div>
+            </div>
+
+            <div class="body"></div>
+
+            <div class="arm"></div>
+
+            <!-- Letter in hand -->
+            <div id="handLetter" class="hand-letter">
+                ✉️
+            </div>
+
+        </div>
+
+        <div class="intro-text">
+            <p>A little letter is coming your way...</p>
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         FLYING LETTER
+         ================================= -->
+
+    <section id="flyingScene" class="screen hidden">
+
+        <div id="flyingLetter" class="flying-letter">
+            💌
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         LETTER PAGE
+         ================================= -->
+
+    <section id="letterPage" class="screen hidden">
+
+        <div class="letter-paper">
+
+            <div class="paper-decoration">✦</div>
+
+            <h1>A Little Note For You 💌</h1>
+
+            <div class="letter-content">
+
+                <p>
+                    Hey!
+                </p>
+
+                <p>
+                   My beloved Chana...akhon dakha korata amr jonno khub difficult,
+                   amra sobai akhon nijeder kaje khub busy but still let i give you a letter on my style.
+                   Toke khub misti misti kotha ami konodin o boli na so maintaining my character ajkeo bolbo na ,
+                   just akta request, rakhbi kina seta tr bpr..."Be my little Chana forever...".
+                   that's it r bolod nijer bhalo ta ectu bojh...sorirer kheyal rakh...LOBH youh!!mumahhh!!
+                </p>
+
+                <p>
+                    I hope this little website makes you smile. 😊
+                </p>
+
+                <p>
+                    Thank you for taking the time to read this.
+                </p>
+
+                <p class="signature">
+                    — From your chanaaa ❤️
+                </p>
+
+            </div>
+
+            <button id="doneButton" class="main-button">
+                Done Reading ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         OPINION PAGE
+         ================================= -->
+
+    <section id="opinionPage" class="screen hidden">
+
+        <div class="opinion-card">
+
+            <div class="question-mark">💭</div>
+
+            <h1>Your Opinion?</h1>
+
+            <p>
+                Now I would love to know what you think.
+            </p>
+
+            <textarea
+                id="opinion"
+                placeholder="Write your opinion here..."
+                maxlength="1000">
+            </textarea>
+
+            <div class="character-count">
+                <span id="count">0</span>/1000
+            </div>
+
+            <button id="sendButton" class="main-button">
+                Send 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         THANK YOU PAGE
+         ================================= -->
+
+    <section id="thankYouPage" class="screen hidden">
+
+        <div class="thank-you">
+
+            <div class="big-smile">
+                😊
+            </div>
+
+            <h1>Thank You! ❤️</h1>
+
+            <p>
+                Thank you for reading my letter
+                and sharing your opinion.
+            </p>
+
+            <div class="floating-hearts">
+                ❤️ &nbsp; 💕 &nbsp; ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
